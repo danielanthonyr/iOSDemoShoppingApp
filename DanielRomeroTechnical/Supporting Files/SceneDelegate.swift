@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  DanielRomeroTechnical
 //
-//  Created by Daniel Romero on 2020-09-16.
+//  Created by Daniel Romero on 2020-09-20.
 //  Copyright © 2020 Daniel Romero. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var wishlist = UserWishlist()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = ShopHomeView(viewModel: ShopHomeViewModel()).environmentObject(wishlist)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

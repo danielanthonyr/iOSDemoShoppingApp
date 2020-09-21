@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DanielRomeroTechnical
 //
-//  Created by Daniel Romero on 2020-09-16.
+//  Created by Daniel Romero on 2020-09-20.
 //  Copyright © 2020 Daniel Romero. All rights reserved.
 //
 
@@ -10,11 +10,20 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    // Locking app in portrait mode as per requirements
+    static var orientationLock = UIInterfaceOrientationMask.portrait
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return AppDelegate.orientationLock
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.barTintColor = UIColor(red: 77/255, green: 137/255, blue: 99/255, alpha: 1)
+        //navigationBarAppearace.titleTextAttributes = [.foregroundColor : UIColor.white]
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         return true
     }
 
