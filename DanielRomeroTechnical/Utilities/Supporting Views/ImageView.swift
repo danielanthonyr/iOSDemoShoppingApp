@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
+// Helper class that allows to load custom image views
 struct ImageView: View {
     @ObservedObject var imageLoader:ImageLoader
     @State var image:UIImage = UIImage()
