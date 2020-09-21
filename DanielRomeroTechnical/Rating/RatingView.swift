@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 1 to 5 star rating view
 struct RatingView: View {
     @State var rating = -1
     var maximumRating = 5

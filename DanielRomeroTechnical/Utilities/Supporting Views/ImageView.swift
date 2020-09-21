@@ -12,16 +12,16 @@ import SwiftUI
 struct ImageView: View {
     @ObservedObject var imageLoader:ImageLoader
     @State var image:UIImage = UIImage()
-    var isComingFromHomepage: Bool
+    var isOnHomepage: Bool
     
     init(withURL url:String, isComingFromHomepage: Bool) {
         imageLoader = ImageLoader(urlString:url)
-        self.isComingFromHomepage = isComingFromHomepage
+        self.isOnHomepage = isComingFromHomepage
     }
     
     @ViewBuilder
     var body: some View {
-        if isComingFromHomepage {
+        if isOnHomepage {
             shopHomeViewImageView
         } else {
             detailViewImageView

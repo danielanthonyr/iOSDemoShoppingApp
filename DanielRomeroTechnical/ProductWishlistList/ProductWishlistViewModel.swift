@@ -13,11 +13,4 @@ class ProductWishlistListRowViewModel: ObservableObject {
     init(product: Product) {
         self.product = product
     }
-    
-    var quantity: String? {
-        if product.quantity == 0 {
-            return "Out of stock"
-        }
-        return nil
-    }
 }
